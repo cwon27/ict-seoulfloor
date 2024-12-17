@@ -36,7 +36,7 @@
 
 #### 개발 환경 (사용기술) 
 - Front-end : CSS , JS , HTML5, Jquery , Bootstrap, Ajax
-- Back-end : spring , MyBatis, Java 11, JSP
+- Back-end : spring mvc , MyBatis, Java 11, JSP
 - DB / Server : MySQL, Tomcat
 - API : CKeditor, 서울 열린데이터 광장, FullCalendar, kakaomap, ChatGPT, postman
 - TOOl : Spring Tool Suite 3
