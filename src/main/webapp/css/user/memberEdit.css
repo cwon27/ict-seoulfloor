@@ -1,0 +1,142 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --primary-color: #4EA685;
+    --secondary-color: #57B894;
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #efefef;
+    --gray-2: #757575;
+
+    --facebook-color: #4267B2;
+    --seoul-color: #EA5A7B;
+    --twitter-color: #1DA1F2;
+    --insta-color: #E1306C;
+    --k-font:'Pretendard';--e-font:'Outfit'
+}
+
+body{font-family:var(--e-font),var(--k-font);}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    background-color: var(--gray);
+    color: var(--black);
+    overflow-x: hidden; /* x축 스크롤 제거 */
+    position: relative;
+    min-height: 100vh;
+}
+
+
+
+h1 {
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 1rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.profile-image2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    z-index: 1;
+}
+
+.profile-image2 img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    overflow: cover;
+}
+
+.controller {
+    padding-top: 120px;
+    text-align: center;
+    z-index: 1;
+}
+
+.signup-form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px;
+    z-index: 1;
+}
+
+.signup-form td {
+    padding: 1.3rem 0;
+    font-weight: bold;
+    color: var(--gray-2);
+    z-index: 1;
+}
+
+.signup-form input {
+    width: 80%;
+    max-width: 600px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-2);
+    background-color: var(--gray);
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 3px;
+    z-index: 1;
+}
+
+.signup-form input:focus {
+    border-color: #104971;
+    background-color: var(--white);
+}
+
+.signup-form input[type="submit"] {
+    width: 100%;
+    max-width: 100px;
+    background-color: #104971;
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+.signup-form input[type="submit"]:hover {
+    background-color: var(--primary-color);
+}
+
+.upload-text {
+    color: #104971;
+    text-decoration: none;
+    margin: 1rem 0;
+    display: inline-block;
+    z-index: 1;
+}
+
+.upload-text:hover {
+    text-decoration: underline;
+}
+
+.profile-image-upload {
+    text-align: center;
+    margin-top: 1rem;
+    z-index: 1;
+}
+
+#fileName {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--gray-2);
+    z-index: 1;
+}

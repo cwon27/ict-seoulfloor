@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ict.seoulfloor.dao.ListDAO">
+   <!-- 혜린 부분 ///////////////////////////////////////////////////////////////////////////////////////-->
+	
+	<select id="getAllLists" resultType="com.ict.seoulfloor.vo.DataVO">
+		SELECT no, title, all_date, loc, loc_detail, img_url 
+		FROM data
+	</select>
+	
+	<!-- 1. tradition  -->
+	<select id="getTradList" resultType="com.ict.seoulfloor.vo.DataVO">
+	   select no, title, all_date, loc, loc_detail, img_url from data
+	   where type_no=2   
+	</select>
+	
+	<select id="searchLists" parameterType="map" resultType="com.ict.seoulfloor.vo.DataVO">
+    SELECT d.no, d.title, d.all_date, d.loc, d.loc_detail, d.img_url, 
+           COUNT(c.comment_no) AS review_count
+    FROM data d
+    LEFT JOIN comment c ON d.no = c.data_no
+    WHERE d.type_no = 2 
+      AND (#{keyword} IS NULL OR (d.title LIKE CONCAT('%', #{keyword}, '%') OR d.loc LIKE CONCAT('%', #{keyword}, '%')))
+    GROUP BY d.no, d.title, d.all_date, d.loc, d.loc_detail, d.img_url
+    ORDER BY 
+	    <choose>
+	        <when test="sort == 'latest'">
+	            d.all_date ASC  <!-- 최신순 정렬 -->
+	        </when>
+	        <when test="sort == 'popular'">
+	            d.hit DESC  <!-- 인기순 정렬 -->
+	        </when>
+	        <when test="sort == 'comment'">
+	            review_count DESC  <!-- 리뷰순 정렬 -->
+	        </when>
+	        <otherwise>
+	            d.all_date ASC  <!-- 기본 정렬: 최신순 -->
+	        </otherwise>
+	    </choose>
+    LIMIT #{pageSize} OFFSET #{offset}
+	</select>
+
+	<select id="getTotalCount" parameterType="map" resultType="int">
+	    SELECT COUNT(*)
+	    FROM data
+	    WHERE type_no=2	
+	    and (#{keyword} IS NULL OR (title LIKE CONCAT('%', #{keyword}, '%') OR loc LIKE CONCAT('%', #{keyword}, '%')))
+	</select>	
+	
+	<!-- 2. hip  -->
+	
+	<select id="getHipList" resultType="com.ict.seoulfloor.vo.DataVO">
+	   select no, title, all_date, loc, loc_detail, img_url from data
+	   where type_no=1   
+	</select>
+	
+	<select id="searchHipLists" parameterType="map" resultType="com.ict.seoulfloor.vo.DataVO">
+    SELECT d.no, d.title, d.all_date, d.loc, d.loc_detail, d.img_url, 
+           COUNT(c.comment_no) AS review_count
+    FROM data d
+    LEFT JOIN comment c ON d.no = c.data_no
+    WHERE d.type_no = 1 
+      AND (#{keyword} IS NULL OR (d.title LIKE CONCAT('%', #{keyword}, '%') OR d.loc LIKE CONCAT('%', #{keyword}, '%')))
+    GROUP BY d.no, d.title, d.all_date, d.loc, d.loc_detail, d.img_url
+    ORDER BY 
+	    <choose>
+	        <when test="sort == 'latest'">
+	            d.all_date ASC  <!-- 최신순 정렬 -->
+	        </when>
+	        <when test="sort == 'popular'">
+	            d.hit DESC  <!-- 인기순 정렬 -->
+	        </when>
+	        <when test="sort == 'comment'">
+	            review_count DESC  <!-- 리뷰순 정렬 -->
+	        </when>
+	        <otherwise>
+	            d.all_date ASC  <!-- 기본 정렬: 최신순 -->
+	        </otherwise>
+	    </choose>
+    LIMIT #{pageSize} OFFSET #{offset}
+	</select>
+	
+	<select id="getTotalHipCount" parameterType="map" resultType="int">
+	    SELECT COUNT(*)
+	    FROM data
+	    WHERE type_no=1	and (#{keyword} IS NULL OR (title LIKE CONCAT('%', #{keyword}, '%') OR loc LIKE CONCAT('%', #{keyword}, '%')))
+	</select>
+	
+   
+	<!-- 혜린 부분 끝 ///////////////////////////////////////////////////////////////////////////////////////-->  
+   
+	
+   
+   <select id="listSelectOne" resultType="com.ict.seoulfloor.vo.DataVO">
+	  select d.no, d.type_no, d.title, d.all_date, d.loc,d.loc_detail, d.lat, d.lng, d.admission, d.page_url, d.img_url, d.host, d.hit, t.type
+	  from data d
+	  join type t
+	  on d.type_no=t.no
+	  where d.no=${param1};
+   </select>
+   
+   <update id="hitCount">
+   		update data set hit=hit+1 
+   		where no=${param1}
+   </update>
+   
+   <insert id="reviewInsert">
+   		insert into comment(Data_no, userid, content, grade, title, thumb, content_txt)
+   		values(${Data_no}, #{userid}, #{content}, ${grade}, #{title}, #{thumb}, #{content_txt})
+   </insert>
+   
+   <select id="reviewSelectList" resultType="com.ict.seoulfloor.vo.CommentVO">
+   		select comment_no, Data_no, userid, content, date_format(writedate,'%Y.%m.%d') writedate, hit, grade, title, thumb, content_txt
+   		from comment 
+   		where data_no=${param1} 
+   		order by comment_no asc;
+   </select>
+  
+  <select id="reviewGradeAvg" resultType="com.ict.seoulfloor.vo.CommentVO">
+  		select round(avg(grade)*2,1) as grade_avg from comment where Data_no=${param1}
+  </select>
+   
+   	<select id="reviewDbOne" resultType="com.ict.seoulfloor.vo.CommentVO">
+	  select * from comment
+	  where comment_no=${param1};
+   </select>
+   
+   <update id="reviewUpdate" >
+   		update comment 
+   		set content=#{content}, grade=${grade}, title=#{title}, thumb=#{thumb}, content_txt=#{content_txt}
+   		where comment_no=${comment_no} and Data_no=${Data_no} and userid=#{userid}
+   </update>
+   
+   <delete id="reviewDelete">
+   		delete from comment where comment_no=${param1} and userid=#{param2} and Data_no=${param3}
+   </delete>
+   
+   <select id="reviewSortList" resultType="com.ict.seoulfloor.vo.CommentVO">
+   		select comment_no, Data_no, userid, content, date_format(writedate,'%Y.%m.%d') writedate, hit, grade, title, thumb, content_txt
+   		from comment 
+   		where data_no=${Data_no}
+   		order by 
+   		<choose>
+	        <when test="sort_opt == 'new'">
+	            comment_no desc  <!-- 최신순 정렬 -->
+	        </when>
+	        <when test="sort_opt == 'grade'">
+	            grade DESC  <!-- 인기순 정렬 -->
+	        </when>
+	        <when test="sort_opt == 'hot'">
+	            hit DESC  <!-- 리뷰순 정렬 -->
+	        </when>
+	        <otherwise>
+	            comment_no desc  <!-- 기본 정렬: 최신순 -->
+	        </otherwise>
+	    </choose>
+   </select>
+   
+   <update id="reviewHitCount">
+   		update comment set hit=hit+1 
+   		where comment_no=${param1} and Data_no=${param2}
+   </update>
+   
+   <!-- 병조 -->
+   
+     <select id = "filter"  resultType="string">
+      SELECT DISTINCT d.type FROM data d
+      JOIN type t ON t.no = d.type_no
+      WHERE t.no = #{param1};
+   </select>
+   <select id = "filterList"  resultType = "com.ict.seoulfloor.vo.DataVO">
+      SELECT * FROM data 
+      <where>
+       <if test="month !=null and month != ''">
+          (DATE_FORMAT(start_date,'%m') = ${month} or DATE_FORMAT(end_date,'%m') = ${month})
+       </if>
+       <if test="loc !=null and loc != ''">
+         and loc = #{loc}
+       </if>
+       <if test="type !=null and type != ''">
+         and type = #{type}
+      </if>
+      </where>
+   </select>
+   
+   <select id = "getlikeState" resultType = "com.ict.seoulfloor.vo.LikeVO">
+   		select * from liketbl where Data_no = #{param1} and userid = #{param2}
+   </select>
+   <insert id="updatelikeState">
+   		insert into liketbl (Data_no, userid) VALUES(#{param1}, #{param2})
+   </insert>
+	<delete id="deletelikeState">
+	    delete from liketbl where Data_no = #{param1} and userid = #{param2}
+	</delete>
+	<select id="getLikeCount" resultType = "int">
+	 	SELECT COUNT(*) count FROM liketbl WHERE Data_no = #{param1};
+	</select>
+   
+</mapper>

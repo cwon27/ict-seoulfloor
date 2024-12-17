@@ -1,0 +1,335 @@
+@charset "UTF-8"; /* 파일의 인코딩 방식을 UTF-8로 설정 */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root{--k-font:'Pretendard';--e-font:'Outfit'}
+
+*{font-family:var(--e-font),var(--k-font);}
+
+/* 좌우로 열리는 박스 스타일 */
+.box1, .box2 {
+  width: 50vw; 
+  height: 100vh;
+  background-color: lightblue;
+  position: absolute; 
+  top: 0;
+  z-index: 2;
+}
+
+.box1 {
+  left: 0; 
+  animation: box1_position 2.5s forwards; /*머무르기*/
+  animation-delay: 1s; /*닫는 속도*/
+}
+
+/* .box1 애니메이션 정의 */
+@keyframes box1_position {
+  0% {
+    transform: translateX(0); 
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    transform: translateX(-100vw); 
+	display: none;
+  }
+}
+
+.box2 {
+  right: 0; 
+  animation: box2_position 2.5s forwards; 
+  animation-delay: 1s; 
+}
+
+/* .box2 애니메이션 정의 */
+@keyframes box2_position {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw); 
+    display: none;
+  }
+}
+
+.test {
+	width: 100%;
+	background-size: cover; 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url('/seoulfloor/img/l3.jpg');
+}
+
+/*-------------------------------------------------------------*/
+/* fade-in-text 클래스의 스타일 정의 */
+.fade-in-text {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(17, 17, 17, 0.6);
+  color: #fff;
+}
+
+/* fade-item 클래스의 기본 스타일 */
+.fade-item {
+  opacity: 0; /* 초기 상태에서 텍스트가 보이지 않도록 설정 */
+  animation: fadeIn 2s forwards; /* fadeIn 애니메이션을 2초 동안 실행 */
+}
+
+/* fadeIn 애니메이션 정의 */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* 애니메이션 시작 시 투명도 0 */
+  }
+  to {
+    opacity: 1; /* 애니메이션 끝 시 투명도 1 (완전히 보임) */
+  }
+}
+
+/* 각 문장에 대한 애니메이션 지연 설정 */
+.fade-item:nth-child(1) {
+  animation-delay: 1.9s; /* 첫 번째 문장은 지연 없이 즉시 표시 */
+}
+
+.fade-item:nth-child(2) {
+  animation-delay: 2.5s; /* 두 번째 문장은 1초 후 표시 */
+}
+
+.fade-item:nth-child(3) {
+  animation-delay: 3s; /* 세 번째 문장은 2초 후 표시 */
+}
+
+.fade-item:nth-child(4) {
+  animation-delay: 3.7s; /* 네 번째 문장은 3초 후 표시 */
+}
+
+.fade-item:nth-child(5) {
+  animation-delay: 4.5s; /* 네 번째 문장은 3초 후 표시 */
+}
+/* .scroll-indicator>.fade-item:nth-child(1), .scroll-indicator>.arrow{
+	animation-delay: 4s; 네 번째 문장은 3초 후 표시
+} */
+
+
+/*스크롤바*/
+.scroll-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+   
+opacity: 0; /* 처음에 투명하게 설정 */
+    visibility: hidden; /* 처음에 숨김 */
+    transition: opacity 2s ease, visibility 0s 2s;
+  }
+
+  .scroll-indicator p {
+    font-size: 16px;
+    color: #c6c7c8;
+    margin: 0;
+  }
+
+  .scroll-indicator .arrow {
+    width: 30px;
+    height: 30px;
+    border-bottom: 4px solid #555;
+    border-right: 4px solid #555;
+    transform: rotate(45deg);
+    margin: 10px auto;
+    animation: bounce 1.5s infinite;
+  }
+
+  /* 화살표가 위아래로 움직이는 애니메이션 */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) rotate(45deg);
+    }
+    40% {
+      transform: translateY(10px) rotate(45deg);
+    }
+    60% {
+      transform: translateY(5px) rotate(45deg);
+    }
+  }
+
+  .scroll-indicator.show {
+    opacity: 1; /* 보이도록 설정 */
+    visibility: visible; /* 숨김 해제 */
+    transition: opacity 2s ease; /* opacity는 2초 동안 천천히 변화 */
+}
+
+
+
+figure.snip14321 {
+  
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  position: relative;  
+  /* 최소, 최대, 고정 폭 설정 */
+  min-width: 230px;
+  /* max-width: 1000px;  */
+  width: 100%;
+  background: #000000;
+  text-align: center; /* 텍스트를 왼쪽 정렬 */
+  display: flex;
+  justify-content: center; /* 가로 방향 중앙 정렬 */
+  align-items: center; /* 세로 방향 중앙 정렬 */
+   flex-direction: column;
+}
+
+figure.snip14321 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  /* 모든 자식 요소에 0.6초 동안 애니메이션 효과 부여 */
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+figure.snip14321 img {
+  opacity: 0.8;
+  width: 100%;
+  height:100%;
+  vertical-align: top;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+figure.snip14321 figcaption {
+  
+  position: absolute;/* figcaption을 부모 요소 안에서 절대 위치로 설정 */
+  bottom: 0; /* figcaption의 위치를 하단과 왼쪽에 고정 */
+  left: 0;
+  
+  width: 100%;  /* figcaption이 부모 요소를 가득 채우도록 너비와 높이를 설정 */
+  height: 100%;
+}
+
+figure.snip14321 figcaption > div {  
+  height: 50%;/* figcaption 내 div 높이를 부모의 50%로 설정 */  
+  overflow: hidden;/* 넘친 내용을 숨김 */  
+  width: 100%;/* div의 너비를 100%로 설정 */
+  position: relative;/* 상대적 위치 설정 */
+}
+
+figure.snip14321 h2,
+figure.snip14321 h3 {
+  /* 제목의 기본 설정: 여백 없음, 절대 위치로 설정 */
+  margin: 0;
+  position: absolute;  
+  left: 0;/* 제목을 왼쪽에 배치 */
+  padding: 0 30px;/* 좌우 여백 설정 */
+  text-transform: uppercase; /* 제목을 모두 대문자로 변환 */
+}
+
+figure.snip14321 h2 {  
+  font-weight: 900;/* h2 요소의 글씨체 굵기를 매우 굵게 설정 */
+  top: 0;/* h2를 상단에 위치 */
+}
+
+figure.snip14321 h3 {
+  font-size: 1em; /* h3 요소의 글씨 크기를 1em으로 설정 */
+  bottom: 0;/* h3를 하단에 위치 */
+  font-weight: 500;/* h3의 글씨 굵기를 중간으로 설정 */
+}
+
+figure.snip14321 h3:nth-of-type(2) { 
+  opacity: 0; /* 두 번째 h3 요소는 처음에 보이지 않도록 투명하게 설정 */
+  -webkit-transform: translateY(150%); /* Y축을 기준으로 150% 아래로 이동시킴 */
+  transform: translateY(150%);
+}
+
+figure.snip14321 a {
+  left: 0;/* a 링크 요소를 부모 요소를 가득 채우도록 절대 위치로 설정 */
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+figure.snip14321:hover img,
+figure.snip14321.hover img {
+  opacity: 0.3;/* 마우스를 올리거나 hover 클래스가 있을 때 이미지 불투명도를 30%로 설정 */
+  
+  /* 이미지를 흑백으로 필터 처리 */
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+/*-------------------------------------------------*/
+
+/*-------------------------------------------------*/
+
+
+figure.snip14321:hover figcaption h3:first-of-type,
+figure.snip14321.hover figcaption h3:first-of-type {
+  /* 첫 번째 h3 요소는 마우스를 올리면 Y축으로 150% 이동하고 투명하게 설정 */
+  -webkit-transform: translateY(150%);
+  transform: translateY(150%);
+  opacity: 0;
+}
+
+figure.snip14321:hover figcaption h3:nth-of-type(2),
+figure.snip14321.hover figcaption h3:nth-of-type(2) {
+  /* 두 번째 h3 요소는 마우스를 올리면 다시 보이도록 설정하고 Y축 이동을 초기화 */
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.show_menu1{
+	display: flex;
+	position: relative;
+    top: 40px;
+	height:100%;
+ }
+ 
+/* 호버 버튼 스타일 */
+.ho1{
+	height : 50px;
+	background-color:black;
+}
+.hover-button-container{
+	position: absolute;
+    top: 70%;
+    left: 47.5%;
+}
+#delayedButton {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease; /* 나타날 때 부드럽게 표시 */
+}
+
+/* 버튼의 기본 스타일 */
+.hover-button {
+    position: relative; 
+    /* top: -230px; */
+    /* left: 0px; */
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    width: 100px;  /* 너비와 높이를 동일하게 설정 */
+    height: 100px;
+    padding: 0; /* 패딩 제거 (동그라미 모양 유지) */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 텍스트를 버튼 안에 가운데 정렬 */
+    text-decoration: none;
+    font-size: 16px; /* 글자 크기를 적절히 줄임 */
+    border-radius: 50%; /* 완전한 동그라미 */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hover-button:hover {
+    background-color: #4E4E4E;
+    transform: scale(1.1);
+}
+body{
+	 scrollbar-width: none;
+	 overflow-x: hidden;
+}

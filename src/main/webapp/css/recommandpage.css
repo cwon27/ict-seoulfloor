@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root{--k-font:'Pretendard';--e-font:'Outfit'}
+
+body{font-family:var(--e-font),var(--k-font);}
+
+.container{
+    width: 100%; /* Full width of the parent element */
+    max-width: 1920px; /* Maximum width */
+    margin: 0 auto; /* Centers the container horizontally */
+    text-align: center;
+    height : 100vh;
+   	display:flex;
+   	flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 70px;
+}
+.title {
+  width: 100%;
+  max-width: 800px;
+  min-width: 600px;
+  height : 8%;
+}
+.content{
+	padding: 2em 2em;
+    margin: 2em 10px;
+    background: #eee; 
+    box-shadow: 0px 0px 0px 10px #eee; 
+    border: dashed 2px #4E4E4E;
+    border-radius: 8px;
+	height : 50%;
+	width : 100%;
+	max-width: 940px;
+	min-width: 600px;
+  	padding: 10px;
+  	position: relative;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+}
+.selectdiv{
+    position: absolute;
+    width: 70%;
+    height: 250px;
+    top: -150px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+}
+.selectbutton, .selectbutton button{
+	width : 100%;
+	height : 100%;
+}
+.line{
+	width : 100%;
+	height : 60%;
+}
+.line > div {
+  height: 100%;
+}
+
+.view{
+	height : 200px;
+ 	width : 100%;
+ 	max-width: 1000px;
+	min-width: 420px;
+ 	padding: 10px; /* Optional: Add padding for better spacing inside the div */
+	display : grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 5px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* TIMELINE  */
+
+.timeline {
+	width : 100%;
+	height : 60%;
+}
+.timeline ol {
+  font-size: 0;
+  width: 100%;
+  height : 60%;
+  padding: 200px 0;
+  transition: all 1s;
+}
+
+.timeline ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 18%;
+  height: 3px;
+  background: #F0F0F0;
+}
+
+.timeline ol li:last-child {
+  width: 18%;
+}
+
+.timeline ol li:not(:first-child) {
+  margin-left: 14px;
+}
+
+.timeline ol li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #D3D3D3;
+}
+/* 색이 바뀔거 */ 
+.timeline ol li[id = "2"]{
+	background: #2E2E2E;
+}
+.timeline ol li[id = "2"]::after {
+  background: #2E2E2E; /* 변경할 색상 */
+}
+
+/* .item{
+	height : 200px;
+	border : 1px solid black;
+} */
+.item {
+  display: inline-block;
+  height: 350px;
+  position: relative;
+  margin: 10px;
+}
+
+.item img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  border-radius: 10px;
+}
+.caption {
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: 0.5s;
+}
+.caption>h2{
+	font-size : 25px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+  	-webkit-box-orient: vertical;
+ 	-webkit-line-clamp: 5;
+  	line-clamp: 5;
+  	word-break: break-word;
+}
+
+.caption a {
+  color: #fff;
+  background-color: #333;
+  text-decoration: none;
+  padding: 7px;
+  border-radius: 3px;
+}
+
+.caption a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.item:hover .caption {
+  opacity: 1;
+}
+
+.btnFloat {
+  position : relative;
+  background: none;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+}
+.btn_title{
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 27px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 1.5px;
+  
+  text-shadow: 5px 5px 20px  rgba(0, 0, 0);
+}
+
+.btnFloat {
+	border-radius: 5%;
+	border: none;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btnFloat>img{
+	 border-radius: 5%;
+}
+
+.btnFloat:hover {
+  margin-top: -2px;
+  margin-left: 0px;
+  transform: scale(1.1,1.1);
+  -ms-transform: scale(1.1,1.1);
+  -webkit-transform: scale(1.1,1.1);
+  box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.25);
+}

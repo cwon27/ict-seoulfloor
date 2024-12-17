@@ -1,0 +1,304 @@
+@charset "UTF-8";
+
+/* 폰트 설정 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root{--k-font:'Pretendard';--e-font:'Outfit'}
+    body {
+      font-family:var(--e-font),var(--k-font);
+      font-size: 14px;
+    }
+
+.upper-container{
+	max-width: 1920px; 
+	/* height: 100%; */
+	
+}
+
+/* 타이틀 ////////////////////////////////////////////////////////////////////*/
+	.top {
+		max-width: 940px;
+	    display: flex;
+	    align-items: center;
+	    /* justify-content: space-between; */
+	    width: 1920px;
+	    margin: 0 auto; 
+	    padding: 20px 0;
+	    font-size: 30px;
+	}
+	
+	
+/* 필터 ////////////////////////////////////////////////////////////////////*/	
+
+	.filter{
+		max-width: 940px; height:70px;
+		width: 1920px;
+	    margin: 0 auto; 
+	}
+	#filterForm{
+		width: 940px;
+		float: left;
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 0px;  /* 버튼 패딩 조정 */
+    	  /* 페이지 번호 간격을 조절 */
+	}
+	#period>select, #searchArea>select, #searchCate>select {
+	width: 200px; height: 45px; 
+	border: 1px solid #4E4E4E;
+  	border-radius: 20px;
+  	background-color: none;
+  	margin: 0 auto;
+  	text-align: center;
+  	font-size: 1.1em;
+  	padding: 10px;
+	}
+	
+	#resetandsubmit>button[type='reset']{
+		width: 60px; height: 45px; 
+		border: 1px solid #ddd;
+  		border-radius: 20px;
+	}
+	
+	#resetandsubmit>button[type='submit']{
+		width: 150px; height: 45px; 
+		/* border: 1px solid #ddd; */
+  		border-radius: 20px;
+  		margin: 0 5px;
+  		background-color: #4E4E4E;
+  		color: white;
+	}
+
+
+/* 슬라이드 ////////////////////////////////////////////////////////////////////*/
+	.swiper-wrapper {
+	    height: 700px; /* 슬라이드 높이 */
+	    width: 1920px; /* 전체 넓이 */
+	    margin: 0 auto; /* 중앙 정렬 */
+		margin-bottom: 20px;
+	    position: relative;
+	}
+	
+	.swiper-slide {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    font-size: 18px;
+	    margin: 0;
+	    padding-bottom: 0;
+	    width: 940px; /* 슬라이드 하나의 넓이 */
+	}
+	.swiper-slide a {
+		color: black;
+	}
+	.swiper-slide a:hover{
+		color: #6b6b6b; transition: 0.7s;
+	}
+	
+	.swiper-slide img {
+	  width: 940px;
+	  height:580px;
+	}
+	
+	.swiper-button-next {
+	  right: 360px;
+	  background: url(/seoulfloor/img/right_btn.png) no-repeat;
+	  background-size: 100% auto;
+	  width: 32px;
+	  background-position: center;
+	  position: absolute;
+	
+	}
+	
+	.swiper-button-prev {
+	  left: 360px;
+	  background: url(/seoulfloor/img/left_btn.png) no-repeat;
+	  background-size: 100% auto;
+	  background-position: center;
+	  position: absolute;
+		
+	
+	}
+
+	.swiper-pagination-bullet {
+	    width: 12px;
+	    height: 12px;
+	    background: transparent;
+	    border: 1px solid #4E4E4E;
+	    opacity: 1;
+	}
+	
+	.swiper-pagination-bullet-active {
+	    width: 30px;
+	    transition: width .5s;
+	    border-radius: 5px;
+	    background: #4E4E4E;
+	    border: 1px solid transparent;
+	}
+	.swiper-button-next::after,
+	.swiper-button-prev::after {
+	  display: none;
+	}
+
+
+/* 검색, 정렬 ////////////////////////////////////////////////////////////////////*/
+
+	.s-container {
+	  width: 940px;
+	  margin: 0 auto;
+	  height: 80px;
+	  display: flex;
+	  justify-content: space-between;
+	  padding: 5px;
+	  background-color: white;
+	  border-radius: 10px;
+	  margin-bottom: 10px;
+	}
+	.search-div {
+	  display: flex;
+	  align-items: center;
+	}
+	
+	.search-input {
+	  width: 250px;
+	  height: 40px;
+	  padding: 10px;
+	  border: 1px solid #ccc;
+	  border-radius: 20px;
+	  font-size: 16px;
+	  margin-right: 10px;
+	}
+	
+	.input-button {
+	  padding: 10px 20px;
+	  background-color: #4E4E4E;
+	  color: white;
+	  border: none;
+	  border-radius: 20px;
+	  cursor: pointer;
+	  font-size: 16px;
+	  height: 40px;
+	}
+	
+	.input-button:hover {
+	  background-color: #2E2E2E;
+	  transition: 0.7s;
+	}
+	.sort-div {
+	display: flex;
+	    align-items: center;
+	}
+	
+	.sort-div-type {
+	  padding: 10px;
+	  border-radius: 20px;
+	  border: 1px solid #ccc;
+	  margin-right: 10px;
+	  background-color: #fff;
+	}
+	
+    .container {
+      width: 950px;
+      margin: 10px auto;
+      padding: 10px;
+    }
+
+/* 리스트 컨테이너 ////////////////////////////////////////////////////////////////////*/
+	.row {
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: flex-start;
+	}
+	.col-md-3 {
+	    box-sizing: border-box;
+	    padding: 15px;  /* 칸 사이에 간격을 줌 */
+	    min-width: 25%;  /* 최소 넓이를 25%로 고정 */
+	    flex-grow: 0;    /* 항목이 남은 공간을 차지하지 않도록 설정 */
+	}
+    .col-md-3 a:link, .col-md-3 a:visited, .col-md-3 a:hover, .col-md-3 a:active{
+    	color: black; text-decoration: none;
+    }
+   
+    .list-container {
+    display: flex;
+    flex-direction: column; /* 세로 방향 배치 */
+    justify-content: flex-start;
+    height: 100%;  /* 컨테이너 높이 100%로 설정 */
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    position: relative;
+    overflow: hidden;
+     
+    }
+     .list-container:hover{
+    	transform: scale(1.05);
+    	transition: 0.7s;
+    }
+
+/* 	.list-container img {
+	    width: 100%;  가로는 100%로 맞춤
+	    height: auto; 세로는 이미지 비율에 맞게
+	    max-height: 300px; 이미지의 최대 높이를 제한
+	    object-fit: cover; 비율을 유지하면서 잘 맞추도록 설정
+	    display: block;
+	} */
+
+    .res_inform {
+    flex-grow: 1;  /* 텍스트가 이미지 아래에 배치 */
+    padding: 10px;
+    text-align: center;
+    }
+
+    .res_inform p {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .res_inform span {
+      display: block;
+      margin-top: 5px;
+    }
+
+    /* 페이지네이션 ////////////////////////////////////////////////////////////////////*/
+	.pagination-container {
+	    margin-top: 25px;
+	}
+
+	.pagination{
+		background: none;
+	}
+	
+	.page-item, .page-link {
+	    border: none;
+	    box-shadow: none;
+	    padding: 10px 15px;  /* 버튼 패딩 조정 */
+	    margin: 0 5px;  /* 페이지 번호 간격을 조절 */
+	    color: black;  /* 기본 텍스트 색 */
+	    border-radius: 25px;  /* 약간의 둥근 모서리 추가 */
+	}
+
+	.page-item, .page-link:hover {
+	    background-color: white;  /* 마우스 오버 시 배경색 변경 */
+	    transition: 0.7s;
+	}
+	
+	.page-item.active, .page-link {
+	    background-color: #4E4E4E;  
+	    transition: 0.7s;
+	    color: white; 
+	    border: none; 
+	} 
+	
+	.list_img_div{
+		width: 210px;
+		height: 293px;
+	}
+	
+	.list_img_div img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+

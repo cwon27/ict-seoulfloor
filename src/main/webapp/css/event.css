@@ -1,0 +1,150 @@
+@charset "UTF-8"; /* CSS 파일의 문자 인코딩을 UTF-8로 설정합니다. */
+
+/* .ev1 클래스: 텍스트를 빨간색으로 하고, 가운데 정렬하며, 폰트 크기를 2em으로 설정 */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root{--k-font:'Pretendard';--e-font:'Outfit'}
+
+body{font-family:var(--e-font),var(--k-font);}
+
+.box_leftType1{
+	text-align:center;
+}
+.travel{
+	position: relative;
+	text-align:center;
+	top : 120px;
+	left : -220px;
+}
+.tag1{
+	position: relative;
+	margin-left:-750px;
+}
+total_check{
+	border-top: 3px solid #999;
+}
+button.button_2 {
+  border: 0; /* 버튼의 테두리를 없앰 */
+  outline: none; /* 버튼 클릭 시 나타나는 외곽선을 없앰 */
+  font-size: 15px; /* 버튼 텍스트의 크기를 설정 */
+  margin: 5px; /* 버튼 주위에 여백을 설정 */
+  background: #fff; /* 버튼의 배경색을 */
+  color: black; /* 버튼 텍스트의 색상을설정 */
+  padding: 10px; /* 버튼 내부에 10px의 패딩을 추가 */
+  cursor: help; /* 버튼에 마우스를 올렸을 때 커서가 포인터(손가락 모양)로 변경 */
+  border-radius: 10px; /* 버튼의 모서리를 10px 둥글게 설정 */
+  position: relative; /* 위치를 상대적으로 설정 */
+  left: 380px; /* 버튼을 오른쪽으로 이동 */
+}
+
+/* .button_2 클래스: 버튼에 마우스를 올렸을 때 (hover) 스타일 설정 */
+button.button_2:hover {
+  color: white; /* 마우스를 올렸을 때 텍스트 색상은 여전히 흰색으로 유지 */
+  background: #4E4E4E; /* 마우스를 올렸을 때 버튼의 배경색을 변경 */
+}
+
+.photo {
+  margin-right: 20px; /* 사진과 텍스트 사이에 여백 추가 */
+      position: relative;
+    top: 20px;
+}
+
+.im {
+    position: relative;
+    right: 327px;
+    width: 220px;
+    height: 300px;
+    top: 25px;/*-----------------------*/
+    border: 0.1rem solid #e6e6eb;
+}
+.area_txt {
+  font-size:25px;
+  position: relative;
+  top : -138px;
+  left: 35px;
+  border: none;
+}
+
+.area_txt a {
+    text-decoration: none;
+    color: black;
+    position: relative;/*-----------------------------------*/
+    top: -140px;
+}
+
+.photo .tag {
+    top: -290px;
+    position: relative;
+    left: 0px;
+}
+
+hr {
+    background: black;
+    margin: 10px auto;
+    width: 880px;
+    height: 3px;
+    position: relative;
+    top: 30px;
+}
+/*--------------*/
+.header-text {
+    display: flex;
+    justify-content: center;
+}
+
+.header-text span {
+    font-weight:1000;
+    animation: wave 1.5s ease-in-out;
+    animation-iteration-count: 100;
+    
+}
+
+@keyframes wave {
+    0%, 40%, 100% {transform: translateY(0);}
+    20%{transform: translateY(-15px);}
+    60%{transform: translateY(-5px);}
+}
+
+.header-text span:nth-child(1) {animation-delay: 0.1s; color : #104971;}
+.header-text span:nth-child(2) {animation-delay: 0.13s;}
+.header-text span:nth-child(3) {animation-delay: 0.16s;}
+.header-text span:nth-child(4) {animation-delay: 0.19s;}
+.header-text span:nth-child(5) {animation-delay: 0.22s;}
+.header-text span:nth-child(6) {animation-delay: 0.25s;}
+.header-text span:nth-child(7) {animation-delay: 0.28s;}
+
+
+.evt1{
+    position: relative;
+    top: 40px;
+    font-size: 20px;
+    text-decoration-line: none;
+    color: #666;
+    left: 20px;
+}
+.evt2{
+	position: relative;
+    top: 90px;
+    left: -85px;
+    font-size: 20px;
+    text-decoration-line: none;
+     color: #666;
+}
+.header-text>span{
+	font-size: 40px;
+}
+.text{
+	position: relative;
+    left: 200px;
+}
+
+.tit {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    height: 100%;
+}
+
+

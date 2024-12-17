@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ict.seoulfloor.dao.UserDAO">
+  <select id="loginOk" resultType="com.ict.seoulfloor.vo.MemberVO">
+		select userid, username from member
+		where userid =#{userid} and userpwd=#{userpwd}
+  </select>
+  <select id="idDoubleCheck" resultType="int">
+  		select count(userid) cnt from member where userid=#{param1}
+  </select>
+  <insert id="memberInsert">
+  		insert into member(userid,userpwd,username, usernick, birth, addr,tel, email)
+  		values(#{userid},#{userpwd},#{username},#{usernick},#{birth},#{addr},#{tel},#{email})  
+  </insert>
+  <select id="memberSelect" resultType="com.ict.seoulfloor.vo.MemberVO">
+ 			select userid,email,tel,addr, usernick, user_img
+ 			from member where userid=#{param1};	
+  </select>
+ 	<update id="memberEdit">
+	update member set userpwd = #{userpwd}, usernick = #{usernick}, addr = #{addr}, tel = #{tel}, email = #{email}
+	where userid = #{userid}; 
+	</update>
+	<update id ="updateUserProfile">
+		update member set user_img = #{user_img} where userid = #{userid}
+	</update>
+	<select id = "likeList" resultType = "com.ict.seoulfloor.vo.DataVO">
+		SELECT d.no, d.title, d.all_date
+		FROM liketbl l JOIN data d ON l.Data_no = d.no
+		WHERE l.userid = #{params1};
+	</select>
+	
+	<insert id="saveStamp">
+    	insert into stamp (userid, content)
+   		values (#{userid}, #{content});
+	</insert>
+	<update id="updateStamp">
+	    update stamp
+	    set content = #{content}
+	    where userid = #{userid};
+	</update>
+	
+	<select id="getStampByUser" resultType="string">
+    select content from stamp where userid = #{userid}
+	</select>
+	
+	<select id="findpassword" resultType="string">
+	select userpwd from member where userid = #{param1} and email = #{param2} and tel =#{param3};
+	</select>
+	
+	
+</mapper>

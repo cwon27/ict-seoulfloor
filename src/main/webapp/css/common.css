@@ -1,0 +1,655 @@
+@charset "utf-8";
+
+/* chaewon */
+.review_section {
+  margin-top: 20px;
+}
+
+.review_top {
+  position: relative;
+}
+
+.review_write_btn {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  padding: 12px 27px;
+  font-size: 16px;
+  border: solid 1px #ebebeb;
+  border-bottom-color: #d8d8d8;
+  border-right-color: #d8d8d8;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.review_bottom {
+  margin-top: 60px;
+}
+
+.grade_section {
+  text-align: center;
+  font-size: 23px;
+  position: relative;
+  height: 90px;
+  margin-top: 50px;
+  padding-bottom: 110px;
+}
+
+.grade_content {
+  margin-top: 10px;
+}
+
+.star {
+  display: inline-block;
+  position: absolute;
+  left: 33%;
+  bottom: 14%;
+}
+
+.star i {
+  color: #fdba39;
+  font-size: 1.5em;
+  margin-right: 6px;
+}
+
+.grade_avg {
+  display: inline-block;
+  position: absolute;
+  left: 58%;
+}
+
+.avg_section {
+  font-size: 1.7em;
+  color: #333;
+  font-weight: bold;
+}
+
+.total_grade {
+  color: #999;
+}
+
+.fa-eye {
+  font-size: 1.3em;
+  margin-right: 6px;
+}
+
+.sort_div {
+  text-align: right;
+  margin: 30px 0;
+  border-top: 2px solid #e6e6eb;
+  padding-top: 20px;
+  
+}
+
+.sort_div span {
+  cursor: pointer;
+  margin-left: 17px;
+  font-size: 15px;
+  color: #666;
+}
+
+.sort_div span:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+.sort_on {
+  color: #000;
+  font-weight: bold;
+}
+
+.review_content {
+  border: 0.1rem solid #e6e6eb;
+  border-radius: 1rem;
+  padding: 2rem 2.4rem;
+  height: 245px;
+}
+
+.review_content_top {
+  display: flex;
+}
+
+.user_grade {
+  width: 30%;
+}
+
+.review_information {
+  width: 70%;
+  text-align: right;
+}
+
+.user_grade i {
+  color: #fdba39;
+  font-size: 1.2em;
+  margin-right: 2px;
+}
+
+.review_information span,
+.review_information i {
+  margin-left: 4px;
+  color: #666;
+}
+
+.review_information i:hover {
+  color: #000;
+}
+
+.review_content {
+  margin: 30px 0;
+}
+.review_content_bottom {
+  margin-top: 25px;
+}
+
+.review_title {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.review_img_content {
+  display: flex;
+}
+
+.review_img {
+  width: 10%;
+  margin-right: 20px;
+  border: 0.1rem solid #e6e6eb;
+  border-radius: 1rem;
+}
+
+.review_img img {
+  width: 100%;
+  height: 86.11px;
+  border-radius: 1rem;
+}
+
+.schedule {
+  margin-top: 10px;
+}
+
+.timer-area{
+	padding: 10px 16px;
+    background-color: #104971;
+    display: inline-block;
+    color:#fff;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.festival_img3>div>div{
+	height: 300px;
+	margin: 20px 0 10px 0;
+}
+
+.festival_img3>div>div img{
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.application_div{
+	padding-bottom: 48px;
+	border-bottom: solid 2px #e6e6eb;
+}
+
+/* footer */
+.top_util {
+    padding-bottom: 17px;
+    border-bottom: solid 1px #E6E6EB ;
+}
+
+.top_util_ul {
+    padding-top: 37px;
+}
+
+.top_util_ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.top_util_ul li {
+    float: left;
+    margin-right: 12px;
+}
+
+.top_util_ul li:last-child {
+    margin-right: 0;
+}
+
+.top_util_ul li a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666670 ;
+}
+
+.footer_inform {
+    padding-top: 3px;
+}
+
+.footer_inform ul {
+    padding-top: 6px;
+}
+
+.footer_inform ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.footer_inform ul li {
+    float: left;
+    margin-right: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666670 ;
+}
+
+.footer_inform ul li:last-child {
+    margin-right: 0;
+}
+
+.footer_bottom {
+    display: flex;
+    align-items: center;
+    padding: 18px 0 30px 0;
+}
+
+.footer_bottom .copyright {
+    margin-right: auto;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666670 ;
+}
+.footer_bottom img{
+	width: 160px;
+	height: 35px;
+}
+
+#toTop{cursor:pointer;opacity:0;position:fixed;right:2.6%;bottom:5vh;z-index:101;width:85px;height:85px;border-radius:50%;font-size:16px;font-weight:500;text-align:center;line-height:85px;color:#fff;background:#4E4E4E;transition:all .6s, padding .25s;font-family:'OutFit'}
+#toTop.on{opacity:0;bottom:10vh}
+#toTop svg{opacity:0;position:absolute;left:50%;top:20px;transform:translateX(-50%);width:20px;height:20px;transition:all .25s}
+#toTop:hover{padding-top:6px}
+#toTop:hover svg{opacity:1;top:18px}
+/* visual */
+.visual_height {
+  height: 720px;
+}
+.visual .inner_full .visula_bg {
+  width: 100%;
+  height: 100%;
+}
+
+.poster_title .visula_content_box {
+  position: relative;
+}
+.poster_title .visula_content_box .festival_title {
+  position: relative;
+  padding-top: 48px;
+}
+
+.poster_title .visula_content_box .festival_title h2 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #00000a;
+  line-height: 48px;
+  letter-spacing: -1px;
+}
+
+.schedule span:last-child {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 20px;
+  font-weight: 700;
+  color: #00000a;
+}
+
+/* 좋아요, 공유하기, 조회수 */
+.poster_slide .inner .like_share_cnt_box {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 20;
+}
+.poster_slide .inner .like_share_cnt_box li {
+  display: flex;
+  align-items: center;
+}
+.poster_slide .inner .like_share_cnt_box li span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
+.poster_slide .inner .like_share_cnt_box li:first-child {
+  padding-right: 15px;
+}
+.poster_slide .inner .like_share_cnt_box li:first-child button.off {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-right: 8px;
+  background: url(https://kfescdn.visitkorea.or.kr/kfes/resources/img/hart_off_btn.png)
+    no-repeat center;
+  background-size: 24px 24px;
+  background-color: transparent;
+  border: 0;
+}
+.poster_slide .inner .like_share_cnt_box li:first-child button.on {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-right: 8px;
+  background: url(https://kfescdn.visitkorea.or.kr/kfes/resources/img/hart_of_btn.png)
+    no-repeat center;
+  background-size: 24px 24px;
+  background-color: transparent;
+  border: 0;
+}
+
+/* 포스터 상세 */
+.homepage_link_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+  bottom: 0;
+  width: 199px;
+  height: 48px;
+  backdrop-filter: blur(10px);
+  border: 1px solid #ccccd1;
+  border-radius: 64px;
+}
+.homepage_link_btn .fst {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a24;
+}
+.homepage_link_btn .lst {
+  width: 24px;
+  height: 24px;
+  padding-left: 12px;
+  background: url(https://kfescdn.visitkorea.or.kr/kfes/resources/img/home_page_link.png)
+    no-repeat center;
+  background-size: 24px 24px;
+}
+.poster_detail {
+  padding-top: 17px;
+}
+.poster_detail .inner .detail_img_box {
+  width: 300px;
+  height: 436px;
+  border-radius: 8px;
+  isolation: isolate;
+}
+.poster_detail .inner .detail_img_box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  isolation: isolate;
+}
+.poster_detail .inner .m_more_btn {
+  display: none;
+}
+.poster_detail .inner .slide_content {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #33333d;
+}
+.poster_detail .inner .poster_info_content .slide_content.fst {
+  padding-bottom: 32px;
+}
+.poster_info_content {
+  padding-bottom: 30px;
+  border-bottom: solid 2px #e6e6eb;
+}
+.poster_detail .inner .poster_detail_wrap {
+  position: relative;
+  margin-top: 0px;
+}
+.poster_detail .inner .poster_detail_title,
+#review_wrap_head {
+  display: block;
+  padding-top: 48px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #33333d;
+}
+
+.poster_detail .inner .poster_detail_area {
+  display: flex;
+  position: relative;
+  padding: 30px 0 48px 0;
+  border-bottom: solid 2px #e6e6eb;
+}
+
+.poster_detail .inner .img_info_box {
+  position: relative;
+  flex: 1;
+  padding-left: 52px;
+}
+.poster_detail .inner .img_info_box ul li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.poster_detail .inner .img_info_box ul li a {
+  width: calc(100% - 60px);
+}
+
+.poster_detail .inner .img_info_box ul li:last-child {
+  margin-bottom: 0;
+}
+
+.poster_detail .inner .img_info_box ul li .info_content {
+  width: calc(100% - 60px);
+  padding-left: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a24;
+  line-height: 29px;
+}
+.poster_detail .inner .map_wrap {
+  position: relative;
+  width: 100%;
+  height: 302px;
+  margin: 30px 0 48px 0;
+  border-radius: 20px;
+  border: 2px solid #e6e6eb;
+}
+.poster_detail .inner .map_wrap .map_shortcut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  bottom: 14px;
+  right: 14px;
+  width: 116px;
+  height: 51px;
+  background: #104971;
+  border-radius: 24px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  border: 0;
+}
+.poster_detail .inner .map_wrap .map_shortcut span {
+  display: inline-block;
+  width: 18px;
+  height: 17px;
+  margin-left: 8px;
+  background: url(https://kfescdn.visitkorea.or.kr/kfes/resources/img/direction_btn.png)
+    no-repeat center;
+  background-size: 18px 17px;
+}
+
+.poster_detail .inner .m_more {
+  display: none;
+}
+.more_pc_btn {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 32px;
+}
+.m_img_fst.down .more_pc_btn {
+  display: none;
+}
+.poster_detail .inner .poster_info_content .slide_content.fst {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 160px;
+  padding-right: 50px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+.slide_content.fst.down {
+  overflow: auto !important;
+  width: 100% !important;
+  display: block !important;
+  padding-right: 0 !important;
+}
+
+/*************************************************모바일&태블릿*************************************************/
+@media all and (max-width: 1008px) {
+  .inner {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 0;
+  }
+  .visual .inner_full .visula_bg {
+    width: 100%;
+    height: 100%;
+    background-position: center !important;
+  }
+
+  .wrap h2 {
+    font-size: 24px;
+    margin: 20px 0 16px;
+  }
+  .wrap > section:first-of-type {
+    padding-top: 100px;
+  }
+
+  .homepage_link_btn {
+    position: relative;
+    margin: 24px auto 0 auto;
+  }
+  .poster_detail {
+    padding-top: 0px;
+  }
+
+  .poster_detail .inner .poster_info_content .slide_content.fst {
+    padding-bottom: 0px;
+    color: #1a1a24;
+  }
+
+  .poster_detail .inner .m_more {
+    display: none;
+  }
+  .m_img_fst {
+    overflow: hidden;
+    max-height: 160px;
+    position: relative;
+  }
+  .poster_detail .inner .poster_info_content .slide_content.fst {
+    overflow: hidden;
+    width: 90%;
+    padding-right: 0;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+  .m_img_fst.down .slide_content.fst {
+    overflow: auto;
+    width: 100% !important;
+    display: block !important;
+  }
+  .poster_detail .inner .poster_info_content .slide_content.lst {
+    padding: 30px 0 0 0;
+    border-bottom: 0;
+  }
+  .m_img_fst::after {
+    content: "더 보기";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #7a45e5;
+    line-height: 32px;
+    cursor: pointer;
+  }
+  .m_img_fst.down::after {
+    display: none;
+  }
+  .m_img_fst.down {
+    max-height: 100% !important;
+  }
+  .poster_detail .inner .poster_info_content {
+    padding-bottom: 48px;
+    border-bottom: solid 1px #e6e6eb;
+  }
+  .poster_detail .inner .poster_detail_area {
+    flex-direction: column;
+    padding: 48px 0 48px 0;
+  }
+  .poster_detail .inner .detail_img_box {
+    width: 100%;
+    height: 100%;
+  }
+  .poster_detail .inner .detail_img_box img {
+    width: 100%;
+  }
+  .poster_detail .inner .img_info_box {
+    width: 100%;
+    padding: 24px 0 0;
+  }
+  .poster_detail .inner .poster_detail_wrap {
+    margin-top: 0;
+  }
+  .poster_detail .inner .poster_detail_title {
+    font-size: 20px;
+    color: #1a1a24;
+    padding-top: 48px;
+  }
+  .poster_detail .inner .map_wrap {
+    margin: 24px 0 48px 0;
+    height: 220px;
+  }
+
+  .more_pc_btn {
+    display: none;
+  }
+
+  .poster_title .visula_content_box .festival_title .sub_title {
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .poster_title .visula_content_box .festival_title h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+}

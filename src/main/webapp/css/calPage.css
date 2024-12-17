@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root{--k-font:'Pretendard';--e-font:'Outfit'}
+
+body{font-family:var(--e-font),var(--k-font);}
+
+/* 총 화면 사이즈 */
+.container{
+    width: 100%; /* Full width of the parent element */
+    max-width: 1920px; /* Maximum width */
+    margin: 0 auto; /* Centers the container horizontally */
+    text-align: center;
+    --bs-gutter-x : 0;
+}
+/* 달력 세팅 */
+.calendar{
+	width : 100%;
+	height : 950px;
+	padding-top : 160px;	
+}
+
+.calendar #calendar{
+	width : 100%;
+	max-width: 940px;
+	min-width: 600px;
+    margin: 0 auto;
+}
+table[role="grid"]{
+	border-collapse: collapse;
+    border-radius: 20px 20px 20px 20px; /* 시계 방향으로 상단 왼쪽, 상단 오른쪽, 하단 오른쪽, 하단 왼쪽 모서리 순서 */
+    overflow: hidden;
+}
+/* 달력 라인 */
+#calendar > div.fc-view-harness.fc-view-harness-active > div > table{
+	border :1px solid #4E4E4E;
+}
+.fc-theme-standard td, .fc-theme-standard th{
+	border : none;
+}
+.fc-col-header>thead>tr{
+	border :1px solid #4E4E4E;
+}
+#calendar > div.fc-view-harness.fc-view-harness-active > div > table > thead > tr > th > div > div > table > thead > tr{
+	height : 60px;
+}
+/* 상단바 영역 */
+.fc-toolbar-chunk{
+	width : 33%;
+	align-items: center;
+}
+.fc-toolbar-chunk>div{
+	width : 100%;
+	display: flex;
+	justify-content: space-evenly;
+    align-items: center;
+}
+
+/*  내부 글자 크기 및 색 */
+.fc-daygrid-day-number{
+	font-size : 40px;
+	color : black;
+	text-decoration: none;
+}
+/* 내용 패딩 */
+.fc-daygrid-day-frame fc-scrollgrid-sync-inner{
+	padding : 0 10px;
+}
+/* 이벤트 나오는 영역 */
+.fc-event-title-container{
+	height : 25px;
+	display : flex;
+	justify-content: center;
+}
+.fc-event-title-container>div{
+	font-size : 18px;
+}
+
+.fc-daygrid-day-events{
+	height : 20px;
+}
+
+/* 숫자 나오는 영역 */
+.fc-daygrid-day-top{
+	justify-content: center;
+    align-items: center;
+	height : 60px;
+}
+/* 달력 요일 색 넣기 */
+.fc-scrollgrid-sync-inner{
+	height : 50px
+}
+.fc-scrollgrid-sync-inner>a {
+  font-size : 30px;
+  color: black;
+  text-decoration: none;
+}
+/* 요일(일) 색 */
+a[aria-label="일요일"] {
+  color: red;
+}
+/* 요일(토) 색 */
+a[aria-label="토요일"] {
+  color: blue;
+}
+/* 요일(숫자) 빨강색 */
+tbody[role = "presentation"]>tr>td:first-child>div>.fc-daygrid-day-top>.fc-daygrid-day-number>a{
+	color: red;
+}
+/* 요일(숫자) 파랑색 */
+tbody[role = "presentation"]>tr>td:last-child>div>.fc-daygrid-day-top>.fc-daygrid-day-number>a{
+	color: blue;
+}
+/* hover시 연출 */
+tbody[role = "presentation"]>tr>td>div:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+	border: 1px solid black;
+}
+
+/* -------------------------show 영역-------------------------------- */
+.show{
+	width: 80%;
+	max-width: 940px;
+	min-width: 600px;
+	margin: 0 auto;
+	height : 60%;
+	margin-top : 30px;
+	/* border: 1px solid black; */
+}
+.show>h4{
+	text-align : left;
+	font-size: 32px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid #e6e6eb;
+    /* margin-bottom : 5%; */
+}
+.show_list{
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 0;
+}
+.aList>.item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height : 600px;
+    justify-content: center;
+}
+.item>.item-image{
+	border-radius: 10px;
+    /*  border : 1px solid black;*/
+    height : 65%;
+}
+ .item>.item-image>img {
+ 	border-radius: 10px;
+ 	/* aspect-ratio: 5 / 4.5; */
+ 	aspect-ratio: 3 / 7;
+    width: 100%;
+    height: 100%; 
+    object-fit: fill;
+}
+.item>.item-desc {
+	text-align : center;
+    height : 25%;
+    /*border : 1px solid green;
+    background-color: #f0f0f0; /* 배경색을 설정합니다. 필요에 따라 조정하세요. */
+    padding: 10px 10px 10px 10px; /* 안쪽 여백을 설정합니다. 필요에 따라 조정하세요. */
+}
+.item>.item-desc>#title{
+	/* font-size: 20px; */
+	font-size: 18px;
+}
+.aList {
+    color: black; /* 링크 색상 기본값으로 설정 */
+}
+.item>.item-desc>#due{
+	padding: 12px 0 10px 0;
+	font-size: 16px;
+}
+.item>.item-desc>#due, .item>.item-desc>#loc{
+	font-size: 16px;
+}
+

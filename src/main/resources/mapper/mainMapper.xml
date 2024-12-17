@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ict.seoulfloor.dao.MainDAO">
+    <select id="calSelect" resultType="map">
+       <![CDATA[
+      SELECT 
+         day AS start, 
+         COUNT(*) AS title
+        FROM (
+            SELECT DATE(#{param1}) + INTERVAL a.a + b.a * 10 + c.a * 100 DAY AS day
+            FROM (SELECT 0 AS a UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) a
+            CROSS JOIN (SELECT 0 AS a UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) b
+            CROSS JOIN (SELECT 0 AS a UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) c
+            WHERE DATE(#{param1}) + INTERVAL a.a + b.a * 10 + c.a * 100 DAY < #{param2}
+        ) AS days
+        LEFT JOIN data ON days.day BETWEEN data.start_date AND data.end_date
+        GROUP BY day
+        ORDER BY day;
+        ]]>
+    </select>
+    <select id = "getDateList" resultType="com.ict.seoulfloor.vo.DataVO">
+       <![CDATA[
+       select no, title, all_date, loc, img_url from data where start_date <= #{param1} AND end_date >= #{param1};
+       ]]>
+    </select>
+    
+    <select id="mainSelectRecord" resultType="com.ict.seoulfloor.vo.DataVO">
+    	(SELECT * FROM data WHERE type_no = 1 ORDER BY no DESC LIMIT 4 OFFSET 4)
+		union all
+		(SELECT * FROM data WHERE type_no = 2 ORDER BY no DESC LIMIT 4 OFFSET 4);
+    </select>
+    
+    <select id="mainReviewSelect" resultType="com.ict.seoulfloor.vo.CommentVO">
+    	select comment_no, Data_no, userid, content, date_format(writedate,'%Y.%m.%d') writedate, hit, grade, title, thumb, content_txt 
+    	from comment 
+    	order by comment_no desc limit 9
+    </select>
+    
+     <select id = "eventList"  resultType="com.ict.seoulfloor.vo.EventVO">
+    	select no, subject, content, event_date from event order by event_date asc
+    </select>
+    
+    <select id= "eventView"  resultType="com.ict.seoulfloor.vo.EventVO">
+    	select no, subject, content, hit from event where no=${param1}
+    </select>
+         <select id="getEventsSortedBy" parameterType="String" resultType="com.ict.seoulfloor.vo.EventVO">
+        SELECT * FROM event
+        <if test="sortType == 'popularity'">
+            ORDER BY hit DESC
+        </if>
+        <if test="sortType == 'latest'">
+            ORDER BY event_date DESC
+        </if>
+    </select>
+    
+    <update id="eventhi" >
+       UPDATE event  SET hit = hit + 1 WHERE no = #{param1}
+    </update>
+    
+</mapper>
