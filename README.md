@@ -2,6 +2,7 @@
 
 ### SEOULFLOOR : 공공데이터를 활용한 비동기처리 전통&힙 행사 추천 웹페이지
 
+#### 포트폴리오 링크 : https://drive.google.com/file/d/1Ri_stqoZsa1Rat2Z6DI6Cd3S6HuWIyw0/view?usp=sharing
 #### 프로젝트 진행 기간 : 2024-08-29 ~ 2024-09-08
 
 2024-08-29 ~ 2024-08-31
@@ -40,6 +41,3 @@
 - DB / Server : MySQL, Tomcat
 - API : CKeditor, 서울 열린데이터 광장, FullCalendar, kakaomap, ChatGPT, postman
 - TOOl : Spring Tool Suite 3
-
-
-#### 포트폴리오 링크 : https://drive.google.com/file/d/1Ri_stqoZsa1Rat2Z6DI6Cd3S6HuWIyw0/view?usp=sharing
