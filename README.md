@@ -42,6 +42,4 @@
 - TOOl : Spring Tool Suite 3
 
 
-#### 포트폴리오 링크 :[ https://drive.google.com/file/d/1_cNb4f_cCm8A800AHrdY1bQ0w9hj_MRH/view?usp=sharing
-](https://drive.google.com/file/d/1Ri_stqoZsa1Rat2Z6DI6Cd3S6HuWIyw0/view?usp=sharing
-)
+#### 포트폴리오 링크 : https://drive.google.com/file/d/1Ri_stqoZsa1Rat2Z6DI6Cd3S6HuWIyw0/view?usp=sharing
