@@ -1,14 +1,16 @@
 ## 한국ICT인재개발원 2차 프로젝트 "SEOULFLOOR"
 
 ### SEOULFLOOR : 공공데이터를 활용한 비동기처리 전통&힙 행사 추천 웹페이지
+
+#### 포트폴리오 링크 : https://drive.google.com/file/d/1Ri_stqoZsa1Rat2Z6DI6Cd3S6HuWIyw0/view?usp=sharing
+
+#### 프로젝트 미리보기
 ![제목을-입력해주세요_-010](https://github.com/user-attachments/assets/a563dae3-4f35-40c9-bdf6-6fd16858938e) | ![014](https://github.com/user-attachments/assets/3d0a37bf-3ed3-4caf-a58d-f37d53bf87f7) 
 ---|---|
 
 ![015](https://github.com/user-attachments/assets/6117a578-71d0-43f6-ab48-e5d1f143b181) | ![제목을-입력해주세요_-025](https://github.com/user-attachments/assets/ec21f094-f8a4-4302-ae0d-88ec89686a81)
 ---|---|
 
-
-#### 포트폴리오 링크 : https://drive.google.com/file/d/1Ri_stqoZsa1Rat2Z6DI6Cd3S6HuWIyw0/view?usp=sharing
 #### 프로젝트 진행 기간 : 2024-08-29 ~ 2024-09-08
 
 2024-08-29 ~ 2024-08-31
